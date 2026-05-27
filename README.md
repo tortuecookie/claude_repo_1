@@ -1,20 +1,26 @@
-# claude_repo_1
+# Market Value Margin & the Swiss Solvency Test
 
-Welcome to this repository!
+A comprehensive, self-contained web course on the **Market Value Margin (MVM)** within Switzerland's **Swiss Solvency Test (SST)** framework.
 
-## About
+## What This Course Covers
 
-This is the starting point for the project. More content will be added here as the project grows.
+The MVM is the cost-of-capital margin that sits above the best estimate of insurance liabilities under the SST. This course explains it from first principles through to worked numerical examples.
 
-## Getting Started
+| Module | Topic |
+|--------|-------|
+| [1. The Swiss Solvency Test](module-1.html) | History, regulatory context, balance sheet structure, SST ratio |
+| [2. MVM: Concept & Rationale](module-2.html) | Transfer value, reference undertaking, hedgeable vs non-hedgeable risks |
+| [3. Cost of Capital Approach](module-3.html) | The 6% CoC rate, SCR_MVM scope, run-off projections, discounting |
+| [4. MVM Calculation](module-4.html) | Full formula, step-by-step methodology, proportional simplification |
+| [5. MVM in Practice](module-5.html) | Numerical examples (life annuity & non-life reserve), sensitivity analysis |
+| [6. Advanced Topics](module-6.html) | SST vs Solvency II Risk Margin, IFRS 17, FINMA reporting, recent developments |
 
-Clone the repository and explore the contents:
+## How to Use
 
-```bash
-git clone https://github.com/tortuecookie/claude_repo_1.git
-cd claude_repo_1
-```
+Open `index.html` in any browser — no server or build step required. All pages are static HTML with a shared stylesheet (`styles.css`).
 
-## Contributing
+To host on GitHub Pages, enable Pages in the repository settings pointing to the `main` branch root.
 
-Feel free to open issues or pull requests to contribute to this project.
+## Audience
+
+Actuaries, risk managers, and finance professionals working with Swiss insurers, or students preparing for roles in insurance regulation. Basic familiarity with discounting and insurance concepts is helpful.

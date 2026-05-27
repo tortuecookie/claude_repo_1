@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 5 – MVM in Practice | MVM Course</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topnav">
+  <a href="index.html" class="topnav-brand">
+    <div class="topnav-flag">+</div>
+    MVM &amp; SST Course
+    <span class="topnav-subtitle">Swiss Solvency Test</span>
+  </a>
+</header>
+
+<div class="layout">
+
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Course</div>
+      <a href="index.html">Overview</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Modules</div>
+      <a href="module-1.html">1. The Swiss Solvency Test</a>
+      <a href="module-2.html">2. MVM: Concept &amp; Rationale</a>
+      <a href="module-3.html">3. Cost of Capital Approach</a>
+      <a href="module-4.html">4. MVM Calculation</a>
+      <a href="module-5.html" class="active">5. MVM in Practice</a>
+      <a href="module-6.html">6. Advanced Topics</a>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <div class="module-label">Module 5</div>
+    <h1>MVM in Practice</h1>
+    <p class="page-subtitle">
+      Worked numerical examples for a life annuity portfolio and a non-life reserve portfolio,
+      with sensitivity analysis and commentary on typical MVM magnitudes.
+    </p>
+
+    <h2>Example A: Life Annuity Portfolio</h2>
+
+    <div class="concept-box">
+      <div class="cbox-title">Portfolio Characteristics</div>
+      <ul style="margin-bottom:0">
+        <li>Number of annuitants: 10,000 lives (average age 72)</li>
+        <li>Annual annuity payment: CHF 20,000 per life</li>
+        <li>Expected run-off: 25 years</li>
+        <li>BEL at valuation date: <strong>CHF 2,000m</strong></li>
+        <li>Risk-free yield curve: approximately flat at 2% p.a.</li>
+        <li>SCR<sub>MVM</sub>(0) for longevity risk: <strong>CHF 120m</strong> (6% of BEL)</li>
+      </ul>
+    </div>
+
+    <h3>Projection of SCR<sub>MVM</sub>(t) — Proportional Method</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Year (t)</th>
+            <th>BEL(t) (CHF m)</th>
+            <th>SCR<sub>MVM</sub>(t) (CHF m)</th>
+            <th>Discount factor v<sub>t+1</sub> at 2%</th>
+            <th>Discounted charge (CHF m)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>2,000</td><td>120.0</td><td>0.9804</td><td>7.06</td></tr>
+          <tr><td>1</td><td>1,860</td><td>111.6</td><td>0.9612</td><td>6.43</td></tr>
+          <tr><td>2</td><td>1,724</td><td>103.4</td><td>0.9423</td><td>5.85</td></tr>
+          <tr><td>3</td><td>1,594</td><td>95.6</td><td>0.9238</td><td>5.30</td></tr>
+          <tr><td>4</td><td>1,470</td><td>88.2</td><td>0.9057</td><td>4.79</td></tr>
+          <tr><td>5</td><td>1,352</td><td>81.1</td><td>0.8880</td><td>4.32</td></tr>
+          <tr><td>7</td><td>1,136</td><td>68.2</td><td>0.8535</td><td>3.49</td></tr>
+          <tr><td>10</td><td>836</td><td>50.2</td><td>0.8203</td><td>2.47</td></tr>
+          <tr><td>15</td><td>440</td><td>26.4</td><td>0.7430</td><td>1.18</td></tr>
+          <tr><td>20</td><td>165</td><td>9.9</td><td>0.6730</td><td>0.40</td></tr>
+          <tr><td>24</td><td>18</td><td>1.1</td><td>0.6217</td><td>0.04</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="example-box">
+      <div class="ex-title">Result: Life Annuity MVM</div>
+      <p>Sum of all discounted SCR<sub>MVM</sub>(t) values &asymp; <strong>CHF 920m</strong></p>
+      <p>MVM = 6% &times; 920m = <strong>CHF 55.2m</strong></p>
+      <p>As a percentage of BEL: <strong>55.2 / 2,000 = 2.76%</strong></p>
+      <p>MCVL = BEL + MVM = 2,000 + 55.2 = <strong>CHF 2,055.2m</strong></p>
+    </div>
+
+    <h3>Duration Cross-Check</h3>
+    <p>Modified duration of annuity cash flows &asymp; 8.5 years at 2% yield.</p>
+    <p>Duration approximation: MVM &asymp; 6% &times; 120m &times; 8.5 = <strong>CHF 61.2m</strong> (within ~11% of full calc).</p>
+
+    <hr class="divider">
+
+    <h2>Example B: Non-Life Reserve Risk Portfolio</h2>
+
+    <div class="concept-box">
+      <div class="cbox-title">Portfolio Characteristics</div>
+      <ul style="margin-bottom:0">
+        <li>Outstanding claims reserve (BEL): <strong>CHF 500m</strong></li>
+        <li>Expected run-off: 12 years (long-tail professional indemnity)</li>
+        <li>Risk-free yield: flat at 2% p.a.</li>
+        <li>SCR<sub>MVM</sub>(0) for reserve risk: <strong>CHF 75m</strong> (15% of BEL)</li>
+      </ul>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Year (t)</th>
+            <th>% Reserve remaining</th>
+            <th>BEL(t) (CHF m)</th>
+            <th>SCR<sub>MVM</sub>(t) (CHF m)</th>
+            <th>v<sub>t+1</sub> at 2%</th>
+            <th>Discounted charge (CHF m)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>100%</td><td>500</td><td>75.0</td><td>0.9804</td><td>4.41</td></tr>
+          <tr><td>1</td><td>85%</td><td>425</td><td>63.8</td><td>0.9612</td><td>3.68</td></tr>
+          <tr><td>2</td><td>70%</td><td>350</td><td>52.5</td><td>0.9423</td><td>2.97</td></tr>
+          <tr><td>3</td><td>55%</td><td>275</td><td>41.3</td><td>0.9238</td><td>2.29</td></tr>
+          <tr><td>4</td><td>45%</td><td>225</td><td>33.8</td><td>0.9057</td><td>1.83</td></tr>
+          <tr><td>5</td><td>35%</td><td>175</td><td>26.3</td><td>0.8880</td><td>1.40</td></tr>
+          <tr><td>6</td><td>25%</td><td>125</td><td>18.8</td><td>0.8706</td><td>0.98</td></tr>
+          <tr><td>7</td><td>18%</td><td>90</td><td>13.5</td><td>0.8535</td><td>0.69</td></tr>
+          <tr><td>8</td><td>10%</td><td>50</td><td>7.5</td><td>0.8368</td><td>0.38</td></tr>
+          <tr><td>9</td><td>5%</td><td>25</td><td>3.8</td><td>0.8203</td><td>0.19</td></tr>
+          <tr><td>10</td><td>2%</td><td>10</td><td>1.5</td><td>0.8043</td><td>0.07</td></tr>
+          <tr><td>11</td><td>1%</td><td>5</td><td>0.8</td><td>0.7885</td><td>0.04</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="example-box">
+      <div class="ex-title">Result: Non-Life Reserve MVM</div>
+      <p>Sum of all discounted SCR<sub>MVM</sub>(t) values &asymp; <strong>CHF 293m</strong></p>
+      <p>MVM = 6% &times; 293m = <strong>CHF 17.6m</strong></p>
+      <p>As a percentage of BEL: <strong>17.6 / 500 = 3.52%</strong></p>
+      <p>MCVL = 500 + 17.6 = <strong>CHF 517.6m</strong></p>
+    </div>
+
+    <h2>Comparing the Two Examples</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Metric</th><th>Life annuity</th><th>Non-life reserve</th></tr></thead>
+        <tbody>
+          <tr><td>BEL</td><td>CHF 2,000m</td><td>CHF 500m</td></tr>
+          <tr><td>SCR<sub>MVM</sub>(0) / BEL</td><td>6.0%</td><td>15.0%</td></tr>
+          <tr><td>Run-off horizon</td><td>25 years</td><td>12 years</td></tr>
+          <tr><td>MVM</td><td>CHF 55.2m</td><td>CHF 17.6m</td></tr>
+          <tr><td><strong>MVM / BEL</strong></td><td><strong>2.76%</strong></td><td><strong>3.52%</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Sensitivity Analysis</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Scenario</th><th>Assumption change</th><th>MVM (CHF m)</th><th>Change vs base</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Base case</strong></td><td>CoC = 6%, rates = 2%</td><td><strong>55.2</strong></td><td>&mdash;</td></tr>
+          <tr><td>Higher CoC</td><td>CoC = 8%</td><td>73.6</td><td>+33%</td></tr>
+          <tr><td>Lower CoC</td><td>CoC = 4%</td><td>36.8</td><td>&minus;33%</td></tr>
+          <tr><td>Higher rates</td><td>Risk-free = 4%</td><td>48.4</td><td>&minus;12%</td></tr>
+          <tr><td>Lower rates</td><td>Risk-free = 0%</td><td>63.8</td><td>+16%</td></tr>
+          <tr><td>Higher longevity SCR</td><td>SCR<sub>MVM</sub>(0) = CHF 150m (+25%)</td><td>69.0</td><td>+25%</td></tr>
+          <tr><td>Faster mortality</td><td>Run-off horizon = 20 years</td><td>48.1</td><td>&minus;13%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Typical MVM Ranges in Practice</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Line of business</th><th>Typical MVM / BEL</th><th>Key driver</th></tr></thead>
+        <tbody>
+          <tr><td>Life: annuities in payment</td><td>2% &ndash; 4%</td><td>Longevity risk, long duration</td></tr>
+          <tr><td>Life: term assurance</td><td>3% &ndash; 6%</td><td>Mortality risk, medium duration</td></tr>
+          <tr><td>Life: savings/unit-linked</td><td>0.5% &ndash; 2%</td><td>Low underwriting risk (mainly lapse)</td></tr>
+          <tr><td>Non-life: short-tail (property)</td><td>1% &ndash; 3%</td><td>Low reserve risk, fast run-off</td></tr>
+          <tr><td>Non-life: long-tail (liability)</td><td>3% &ndash; 7%</td><td>High reserve risk, long settlement</td></tr>
+          <tr><td>Health: supplementary</td><td>2% &ndash; 5%</td><td>Morbidity, medical cost inflation</td></tr>
+          <tr><td>Reinsurance portfolios</td><td>3% &ndash; 10%</td><td>Catastrophe risk, complex long-tail</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="takeaways">
+      <div class="t-title">Key Takeaways &mdash; Module 5</div>
+      <ul>
+        <li>Life annuity example (BEL = CHF 2bn, 25-year horizon): MVM &asymp; CHF 55m (2.76% of BEL).</li>
+        <li>Non-life reserve example (BEL = CHF 500m, 12-year horizon): MVM &asymp; CHF 18m (3.52% of BEL).</li>
+        <li>MVM / BEL is driven primarily by the SCR<sub>MVM</sub> / BEL ratio and the run-off duration.</li>
+        <li>MVM is linearly proportional to the CoC rate.</li>
+        <li>In a low interest-rate environment, MVM tends to be higher.</li>
+        <li>Typical MVM / BEL: under 1% (short-tail savings) to over 7% (long-tail liability reinsurance).</li>
+      </ul>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="module-4.html" class="nav-btn prev">&larr; Module 4: MVM Calculation</a>
+      <a href="module-6.html" class="nav-btn next">Module 6: Advanced Topics &rarr;</a>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

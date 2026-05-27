@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 6 – Advanced Topics | MVM Course</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topnav">
+  <a href="index.html" class="topnav-brand">
+    <div class="topnav-flag">+</div>
+    MVM &amp; SST Course
+    <span class="topnav-subtitle">Swiss Solvency Test</span>
+  </a>
+</header>
+
+<div class="layout">
+
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Course</div>
+      <a href="index.html">Overview</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Modules</div>
+      <a href="module-1.html">1. The Swiss Solvency Test</a>
+      <a href="module-2.html">2. MVM: Concept &amp; Rationale</a>
+      <a href="module-3.html">3. Cost of Capital Approach</a>
+      <a href="module-4.html">4. MVM Calculation</a>
+      <a href="module-5.html">5. MVM in Practice</a>
+      <a href="module-6.html" class="active">6. Advanced Topics</a>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <div class="module-label">Module 6</div>
+    <h1>Advanced Topics &amp; Comparisons</h1>
+    <p class="page-subtitle">
+      An in-depth comparison of MVM (SST) and Risk Margin (Solvency II), criticisms of
+      the CoC approach, internal model considerations, and FINMA reporting requirements.
+    </p>
+
+    <h2>MVM (SST) vs Risk Margin (Solvency II)</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Feature</th><th>SST — Market Value Margin</th><th>Solvency II — Risk Margin</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Official name</strong></td><td>Market Value Margin (MVM)</td><td>Risk Margin (RM)</td></tr>
+          <tr><td><strong>Regulator</strong></td><td>FINMA (Switzerland)</td><td>EIOPA / national NCAs (EU)</td></tr>
+          <tr><td><strong>CoC rate</strong></td><td>6% p.a.</td><td>6% p.a.</td></tr>
+          <tr><td><strong>Base risk measure</strong></td><td>99% Expected Shortfall (ES)</td><td>99.5% Value at Risk (VaR)</td></tr>
+          <tr><td><strong>Market risk</strong></td><td>Excluded</td><td>Excluded</td></tr>
+          <tr><td><strong>Operational risk</strong></td><td>Excluded</td><td>Included</td></tr>
+          <tr><td><strong>Counterparty credit</strong></td><td>Reinsurance counterparty included</td><td>Counterparty default risk included</td></tr>
+          <tr><td><strong>Internal model</strong></td><td>Allowed with FINMA approval</td><td>Allowed with NCA approval</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>The Operational Risk Difference</h3>
+    <p>
+      Solvency II includes <strong>operational risk</strong> in the SCR for the Risk Margin;
+      SST excludes it from SCR<sub>MVM</sub>. The rationale for the SST exclusion is that
+      operational risk is largely independent of the liability run-off profile and is difficult
+      to project meaningfully over a multi-year horizon.
+    </p>
+    <p>
+      This means SST MVMs tend to be slightly <em>lower</em> than Solvency II Risk Margins
+      for otherwise identical portfolios.
+    </p>
+
+    <h2>Criticisms of the Cost-of-Capital Approach</h2>
+
+    <div class="concept-box">
+      <div class="cbox-title">Major Criticisms</div>
+      <ul style="margin-bottom:0">
+        <li><strong>The 6% rate is arbitrary.</strong> Calibrated in a higher-rate environment; overstated when risk-free rates are low.</li>
+        <li><strong>Pro-cyclicality.</strong> When risk-free rates fall (stress periods), MVM increases, worsening SST ratios at the worst time.</li>
+        <li><strong>No liquidity premium.</strong> Real insurers earn illiquidity premia; ignoring this overstates the cost of running off liabilities.</li>
+        <li><strong>Proportional simplifications can be misleading</strong> when SCR/BEL ratio is not constant over time.</li>
+        <li><strong>Double-counting concern.</strong> The MVM in TC may partly double-count risk already captured in the ES component.</li>
+      </ul>
+    </div>
+
+    <h2>Internal Models and MVM</h2>
+    <p>Under the SST, insurers may use <strong>internal models</strong> rather than the FINMA standard model, subject to FINMA approval. This affects MVM by producing potentially different (often lower) SCR<sub>MVM</sub>(0) values.</p>
+
+    <div class="info-box">
+      <strong>Practical note:</strong> Even companies with approved internal models for the ES
+      component sometimes use the proportional simplification for MVM projection, as the
+      incremental accuracy may not materially change the MVM outcome.
+    </div>
+
+    <h2>FINMA Reporting and Disclosure</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Requirement</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Annual SST report</strong></td><td>Submitted to FINMA by 30 April for the 1 January reference date</td></tr>
+          <tr><td><strong>Solo vs. group</strong></td><td>Computed at both solo entity and Swiss group level</td></tr>
+          <tr><td><strong>Public disclosure</strong></td><td>SST ratio disclosed publicly for groups; solo ratios to policyholders on request</td></tr>
+          <tr><td><strong>Pre-notification</strong></td><td>Significant changes to MVM methodology require FINMA pre-approval</td></tr>
+          <tr><td><strong>Management actions</strong></td><td>MVM impact of proposed management actions (e.g., reinsurance purchase) should be assessed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Recent Developments</h2>
+
+    <h3>Solvency II Review (EU) &mdash; Implications for SST</h3>
+    <p>
+      EIOPA's 2021&ndash;2022 review of Solvency II introduced a <strong>lambda factor (&lambda;)</strong>
+      that reduces the Risk Margin in proportion to the risk-free rate level, addressing the concern
+      that 6% CoC overstates the true cost in low-rate environments (effective 2026).
+    </p>
+    <p>
+      FINMA had not introduced a comparable adjustment to the SST MVM as of the time of writing.
+      Swiss insurers and the Swiss Actuarial Association (SAA) have called for a similar review.
+    </p>
+
+    <h3>IASB IFRS 17 and the Risk Adjustment</h3>
+    <p>
+      Under <strong>IFRS 17</strong> (effective 2023), insurers report a <strong>Risk Adjustment (RA)</strong>
+      for non-financial risk in their accounts. The RA is conceptually similar to the MVM but:
+    </p>
+    <ul>
+      <li>Not prescribed as a CoC method &mdash; companies can use CoC, quantile, or other approaches.</li>
+      <li>IFRS 17 requires disclosure of the confidence level equivalent of the RA.</li>
+      <li>The SST MVM remains a <em>regulatory</em> (not accounting) concept computed separately.</li>
+    </ul>
+
+    <div class="warning-box">
+      <strong>IFRS 17 vs SST:</strong> Do not confuse the IFRS 17 Risk Adjustment with the SST
+      Market Value Margin. They serve different purposes, follow different rules, and will
+      generally produce different values for the same portfolio.
+    </div>
+
+    <h2>MVM in the Broader SST Ecosystem</h2>
+
+    <div class="formula-box">
+      <div class="box-label">SST Ratio — Expanded View</div>
+      <div class="f-main">
+        SST Ratio = [A &minus; BEL &minus; MVM] / [ES<sub>99%</sub>(&minus;&Delta;RBC) + MVM]
+      </div>
+      <div class="f-note">
+        &uarr; MVM &rarr; lower RBC (numerator falls) AND higher TC (denominator rises)<br>
+        A larger MVM has a <em>doubly negative</em> effect on the SST ratio.
+      </div>
+    </div>
+
+    <div class="takeaways">
+      <div class="t-title">Key Takeaways &mdash; Module 6</div>
+      <ul>
+        <li>MVM (SST) and Risk Margin (Solvency II) use the same 6% CoC formula but differ on the base risk measure and inclusion of operational risk.</li>
+        <li>The 6% CoC rate is criticized for being pro-cyclical; Solvency II introduced a lambda adjustment in 2026.</li>
+        <li>Internal model users may calculate SCR<sub>MVM</sub> using their own calibrations, subject to FINMA approval.</li>
+        <li>MVM appears in both numerator and denominator of the SST ratio, giving it a doubly negative effect when it increases.</li>
+        <li>IFRS 17 Risk Adjustment and the SST MVM are distinct concepts measured under different frameworks.</li>
+        <li>Annual SST reports are submitted to FINMA by 30 April; group SST ratios are publicly disclosed.</li>
+      </ul>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="module-5.html" class="nav-btn prev">&larr; Module 5: MVM in Practice</a>
+      <a href="index.html" class="nav-btn next">Back to Course Overview &rarr;</a>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

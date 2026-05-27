@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 1 – The Swiss Solvency Test | MVM Course</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topnav">
+  <a href="index.html" class="topnav-brand">
+    <div class="topnav-flag">+</div>
+    MVM &amp; SST Course
+    <span class="topnav-subtitle">Swiss Solvency Test</span>
+  </a>
+</header>
+
+<div class="layout">
+
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Course</div>
+      <a href="index.html">Overview</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Modules</div>
+      <a href="module-1.html" class="active">1. The Swiss Solvency Test</a>
+      <a href="module-2.html">2. MVM: Concept &amp; Rationale</a>
+      <a href="module-3.html">3. Cost of Capital Approach</a>
+      <a href="module-4.html">4. MVM Calculation</a>
+      <a href="module-5.html">5. MVM in Practice</a>
+      <a href="module-6.html">6. Advanced Topics</a>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <div class="module-label">Module 1</div>
+    <h1>The Swiss Solvency Test</h1>
+    <p class="page-subtitle">
+      An overview of Switzerland's economic solvency framework &mdash; its history,
+      structure, and the key quantities that underpin capital adequacy for Swiss insurers.
+    </p>
+
+    <h2>Background and Regulatory Context</h2>
+    <p>
+      The <strong>Swiss Solvency Test (SST)</strong> is Switzerland's risk-based capital
+      adequacy framework for insurance companies. It is administered by
+      <strong>FINMA</strong> (Eidgen&ouml;ssische Finanzmarktaufsicht, the Swiss Financial
+      Market Supervisory Authority) and has been mandatory for all Swiss insurers and
+      reinsurers since <strong>1 January 2011</strong>.
+    </p>
+    <p>
+      Development of the SST began in 2003, making Switzerland one of the earliest countries
+      to adopt a fully economic, market-consistent solvency framework. The SST was designed
+      to overcome the shortcomings of earlier rule-based systems, which relied on book values
+      and fixed factors rather than the actual economic exposure of an insurer.
+    </p>
+
+    <div class="concept-box">
+      <div class="cbox-title">Core Principle</div>
+      <p style="margin:0">
+        The SST is built on <strong>economic and market-consistent valuation</strong>. All
+        assets and liabilities are valued at the amounts a rational, well-informed market
+        participant would agree to in an arm's-length transaction. Capital requirements
+        reflect the actual risk profile of the insurer, not regulatory artefacts.
+      </p>
+    </div>
+
+    <h2>The SST Balance Sheet</h2>
+    <p>
+      Under the SST, the balance sheet is restated on a market-consistent basis.
+      This differs substantially from the statutory (accounting) balance sheet.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Valuation basis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Market-consistent assets (A)</strong></td>
+            <td>All invested assets, reinsurance recoverables, other assets</td>
+            <td>Fair (market) value</td>
+          </tr>
+          <tr>
+            <td><strong>Best Estimate Liabilities (BEL)</strong></td>
+            <td>Expected present value of future insurance cash flows</td>
+            <td>Risk-free discounting</td>
+          </tr>
+          <tr>
+            <td><strong>Market Value Margin (MVM)</strong></td>
+            <td>Cost of capital for non-hedgeable risks over the run-off period</td>
+            <td>Cost-of-capital method</td>
+          </tr>
+          <tr>
+            <td><strong>Other liabilities</strong></td>
+            <td>Subordinated debt, financial liabilities</td>
+            <td>Fair value</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      The total market-consistent value of insurance liabilities is therefore:
+    </p>
+
+    <div class="formula-box">
+      <div class="box-label">Market-Consistent Value of Liabilities</div>
+      <div class="f-main">MCVL = BEL + MVM</div>
+      <div class="f-note">
+        BEL &nbsp;= Best Estimate Liabilities (probability-weighted PV of future cash flows)<br>
+        MVM = Market Value Margin (see Modules 2&ndash;4)
+      </div>
+    </div>
+
+    <h2>Risk-Bearing Capital (RBC)</h2>
+    <p>
+      The <strong>Risk-Bearing Capital (RBC)</strong> is the SST equivalent of "available
+      capital" or "own funds". It measures the financial cushion available to absorb
+      unexpected losses:
+    </p>
+
+    <div class="formula-box">
+      <div class="box-label">Risk-Bearing Capital</div>
+      <div class="f-main">RBC = A &minus; BEL &minus; MVM &minus; Other liabilities</div>
+      <div class="f-note">
+        In simplified notation (ignoring other liabilities):<br>
+        RBC = Market-consistent assets &minus; MCVL
+      </div>
+    </div>
+
+    <p>
+      RBC is analogous to the "excess of assets over liabilities" but measured on a
+      fully market-consistent basis. A positive RBC means the insurer holds more
+      market-consistent assets than liabilities, providing a buffer for adverse scenarios.
+    </p>
+
+    <h2>Target Capital (TC)</h2>
+    <p>
+      The <strong>Target Capital (TC)</strong> represents the minimum level of RBC
+      that FINMA requires an insurer to hold. It captures the risk that RBC could
+      deteriorate over a one-year horizon due to market movements, insurance losses,
+      or other adverse events.
+    </p>
+    <p>
+      Formally, TC is based on the <strong>Expected Shortfall (ES)</strong> at the
+      99% confidence level of the random variable representing the one-year change in
+      RBC. Expected Shortfall (also called Conditional Value at Risk, CVaR) is a
+      coherent risk measure that captures the average loss in the worst 1% of scenarios:
+    </p>
+
+    <div class="formula-box">
+      <div class="box-label">Target Capital</div>
+      <div class="f-main">TC = ES<sub>99%</sub>(&minus;&Delta;RBC) + MVM</div>
+      <div class="f-note">
+        &minus;&Delta;RBC &nbsp;= decrease in RBC over one year (a loss)<br>
+        ES<sub>99%</sub> = Expected Shortfall at 99% confidence (average loss in worst 1% of scenarios)<br>
+        MVM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= Market Value Margin (ensures liabilities can be transferred)
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>Why add MVM to TC?</strong> The ES captures unexpected <em>deterioration</em>
+      over one year. The MVM ensures that even after a stress event, the insurer holds
+      enough capital to transfer its liabilities to a third party at their full
+      market-consistent value.
+    </div>
+
+    <h2>The SST Ratio</h2>
+    <p>
+      The SST solvency condition is expressed as a ratio. An insurer is solvent under
+      the SST if and only if:
+    </p>
+
+    <div class="formula-box">
+      <div class="box-label">SST Solvency Condition</div>
+      <div class="f-main">SST Ratio = RBC / TC &ge; 100%</div>
+      <div class="f-note">
+        An SST ratio below 100% requires the insurer to submit a remediation plan to FINMA.<br>
+        Ratios are reported annually and disclosed publicly at the group level.
+      </div>
+    </div>
+
+    <h2>Risk Categories in the SST</h2>
+    <p>
+      The TC (specifically, the ES component) is driven by the following risk categories:
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Risk category</th>
+            <th>Key risk drivers</th>
+            <th>Typical method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Market risk</strong></td>
+            <td>Interest rates, equities, FX, real estate, spreads</td>
+            <td>Variance&ndash;covariance or scenario-based</td>
+          </tr>
+          <tr>
+            <td><strong>Insurance risk</strong></td>
+            <td>Mortality, longevity, lapse, catastrophe, reserve risk</td>
+            <td>Standard model or internal model</td>
+          </tr>
+          <tr>
+            <td><strong>Credit risk</strong></td>
+            <td>Reinsurance counterparty default, bond issuer default</td>
+            <td>Factor-based or rating-based</td>
+          </tr>
+          <tr>
+            <td><strong>Scenario risk</strong></td>
+            <td>Pandemic, earthquake, financial crisis, etc.</td>
+            <td>Pre-defined FINMA scenarios</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      These risk categories interact through a <strong>correlation matrix</strong>.
+      The total TC is typically less than the sum of individual risk capitals thanks
+      to diversification effects.
+    </p>
+
+    <h2>SST vs Solvency II: A Quick Comparison</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>SST (Switzerland)</th>
+            <th>Solvency II (EU)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jurisdiction</td>
+            <td>Switzerland (FINMA)</td>
+            <td>European Union (EIOPA)</td>
+          </tr>
+          <tr>
+            <td>Risk measure</td>
+            <td>Expected Shortfall (ES) at 99%</td>
+            <td>Value-at-Risk (VaR) at 99.5%</td>
+          </tr>
+          <tr>
+            <td>Time horizon</td>
+            <td>1 year</td>
+            <td>1 year</td>
+          </tr>
+          <tr>
+            <td>Liability valuation</td>
+            <td>BEL + MVM</td>
+            <td>Best Estimate + Risk Margin</td>
+          </tr>
+          <tr>
+            <td>Cost-of-capital rate</td>
+            <td>6%</td>
+            <td>6%</td>
+          </tr>
+          <tr>
+            <td>Mandatory internal models</td>
+            <td>No (standard model available)</td>
+            <td>No (standard formula available)</td>
+          </tr>
+          <tr>
+            <td>Effective since</td>
+            <td>2011</td>
+            <td>2016</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warning-box">
+      <strong>Note on ES vs VaR:</strong> An Expected Shortfall at 99% is generally
+      more conservative than a Value-at-Risk at 99.5% for fat-tailed distributions,
+      but less conservative for thin-tailed ones. In practice, SST and Solvency II
+      capital requirements tend to be broadly comparable in magnitude.
+    </div>
+
+    <div class="takeaways">
+      <div class="t-title">Key Takeaways &mdash; Module 1</div>
+      <ul>
+        <li>The SST is Switzerland's economic solvency framework, mandatory since 2011 and administered by FINMA.</li>
+        <li>All assets and liabilities are valued on a market-consistent basis.</li>
+        <li>Insurance liabilities = BEL + MVM. The MVM is the focus of this course.</li>
+        <li>Risk-Bearing Capital (RBC) is the available capital; Target Capital (TC) is the required capital.</li>
+        <li>The SST ratio = RBC / TC must be &ge; 100% for an insurer to be considered solvent.</li>
+        <li>TC is based on the 99% Expected Shortfall of the one-year change in RBC, plus the MVM.</li>
+      </ul>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="index.html" class="nav-btn prev">&larr; Course Overview</a>
+      <a href="module-2.html" class="nav-btn next">Module 2: MVM Concept &rarr;</a>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

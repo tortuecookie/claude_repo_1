@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 4 – MVM Calculation | MVM Course</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topnav">
+  <a href="index.html" class="topnav-brand">
+    <div class="topnav-flag">+</div>
+    MVM &amp; SST Course
+    <span class="topnav-subtitle">Swiss Solvency Test</span>
+  </a>
+</header>
+
+<div class="layout">
+
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Course</div>
+      <a href="index.html">Overview</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Modules</div>
+      <a href="module-1.html">1. The Swiss Solvency Test</a>
+      <a href="module-2.html">2. MVM: Concept &amp; Rationale</a>
+      <a href="module-3.html">3. Cost of Capital Approach</a>
+      <a href="module-4.html" class="active">4. MVM Calculation</a>
+      <a href="module-5.html">5. MVM in Practice</a>
+      <a href="module-6.html">6. Advanced Topics</a>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <div class="module-label">Module 4</div>
+    <h1>MVM Calculation Methodology</h1>
+    <p class="page-subtitle">
+      A step-by-step walkthrough of the full MVM calculation, from identifying
+      the run-off profile to applying the cost-of-capital formula and approved simplifications.
+    </p>
+
+    <h2>The Full Formula</h2>
+
+    <div class="formula-box">
+      <div class="box-label">MVM — Definitive Formula (SST)</div>
+      <div class="f-main">
+        MVM = CoC &times; &Sigma;<sub>t=0</sub><sup>T&minus;1</sup> SCR<sub>MVM</sub>(t) / (1 + r<sub>0,t+1</sub>)<sup>t+1</sup>
+      </div>
+      <div class="f-note">
+        <strong>CoC</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 0.06 (6% per annum)<br>
+        <strong>SCR<sub>MVM</sub>(t)</strong> = non-hedgeable risk capital at beginning of year t+1<br>
+        <strong>r<sub>0,t+1</sub></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = risk-free spot rate from today to time t+1<br>
+        <strong>T</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = run-off horizon
+      </div>
+    </div>
+
+    <h2>Step-by-Step Calculation Guide</h2>
+
+    <h3>Step 1: Define the Liability Portfolio</h3>
+    <p>Identify all insurance liabilities and determine the run-off horizon T (the year SCR<sub>MVM</sub> reaches zero).</p>
+
+    <h3>Step 2: Compute BEL and SCR<sub>MVM</sub>(0)</h3>
+    <p>Calculate the Best Estimate and the current-year non-hedgeable capital requirement. This is the standard SST calculation restricted to underwriting and reinsurance credit risk (no market risk).</p>
+
+    <h3>Step 3: Project SCR<sub>MVM</sub>(t) for t = 1 to T&minus;1</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Approach</th><th>Method</th><th>Accuracy</th><th>Effort</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Full projection</strong></td><td>Re-run SST underwriting risk model year by year</td><td>Highest</td><td>Very high</td></tr>
+          <tr><td><strong>Proportional method</strong></td><td>SCR<sub>MVM</sub>(t) = SCR<sub>MVM</sub>(0) &times; BEL(t)/BEL(0)</td><td>Moderate</td><td>Low</td></tr>
+          <tr><td><strong>Duration approximation</strong></td><td>MVM &asymp; CoC &times; SCR<sub>MVM</sub>(0) &times; D<sub>L</sub></td><td>Rough</td><td>Very low</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-box">
+      <strong>FINMA guidance:</strong> Larger and more complex insurers are expected to use
+      a projection-based approach. Smaller companies may apply proportional or duration-based
+      simplifications provided they can demonstrate it does not materially understate the MVM.
+    </div>
+
+    <h3>Step 4: Apply Discount Factors</h3>
+    <p>Obtain the FINMA-prescribed risk-free spot rates and compute:</p>
+    <div class="formula-box">
+      <div class="box-label">Discount Factor</div>
+      <div class="f-main">v<sub>t+1</sub> = 1 / (1 + r<sub>0,t+1</sub>)<sup>t+1</sup></div>
+    </div>
+
+    <h3>Step 5: Sum the Discounted Capital Charges</h3>
+    <div class="formula-box">
+      <div class="box-label">Final Assembly</div>
+      <div class="f-main">
+        MVM = 0.06 &times; [ SCR<sub>MVM</sub>(0)&times;v<sub>1</sub> + SCR<sub>MVM</sub>(1)&times;v<sub>2</sub> + ... + SCR<sub>MVM</sub>(T&minus;1)&times;v<sub>T</sub> ]
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <h2>The Proportional Simplification in Detail</h2>
+
+    <div class="formula-box">
+      <div class="box-label">Proportional Simplification</div>
+      <div class="f-main">SCR<sub>MVM</sub>(t) = SCR<sub>MVM</sub>(0) &times; BEL(t) / BEL(0)</div>
+      <div class="f-note">Valid when the risk profile does not change materially as the portfolio shrinks.</div>
+    </div>
+
+    <div class="formula-box">
+      <div class="box-label">MVM with Proportional Simplification</div>
+      <div class="f-main">
+        MVM = 0.06 &times; [ SCR<sub>MVM</sub>(0) / BEL(0) ] &times; &Sigma;<sub>t=0</sub><sup>T&minus;1</sup> BEL(t) &times; v<sub>t+1</sub>
+      </div>
+    </div>
+
+    <h2>The Duration Approximation</h2>
+    <div class="formula-box">
+      <div class="box-label">Duration Approximation (rough cross-check only)</div>
+      <div class="f-main">MVM &asymp; CoC &times; SCR<sub>MVM</sub>(0) &times; D<sub>L</sub></div>
+      <div class="f-note">
+        D<sub>L</sub> = modified (Macaulay) duration of the BEL cash flows
+      </div>
+    </div>
+
+    <h2>Common Pitfalls</h2>
+    <ul>
+      <li><strong>Including market risk</strong> in SCR<sub>MVM</sub> &mdash; overstates MVM.</li>
+      <li><strong>Using the wrong yield curve</strong> &mdash; must use FINMA risk-free rates.</li>
+      <li><strong>Ignoring long-tail lines</strong> &mdash; run-off can extend 20&ndash;40 years; cutting it short materially understates MVM.</li>
+      <li><strong>Proportional simplification on volatile lines</strong> &mdash; if SCR/BEL is not stable, simplification introduces bias.</li>
+    </ul>
+
+    <div class="takeaways">
+      <div class="t-title">Key Takeaways &mdash; Module 4</div>
+      <ul>
+        <li>MVM = 6% &times; &Sigma; SCR<sub>MVM</sub>(t) / (1 + r<sub>t+1</sub>)<sup>t+1</sup> summed from t=0 to T&minus;1.</li>
+        <li>The most demanding step is projecting SCR<sub>MVM</sub>(t) for all future years.</li>
+        <li>The proportional simplification assumes SCR<sub>MVM</sub> declines in line with BEL.</li>
+        <li>The duration approximation (MVM &asymp; 6% &times; SCR<sub>MVM</sub>(0) &times; D<sub>L</sub>) is a rough cross-check only.</li>
+        <li>Market risk and operational risk must be excluded from SCR<sub>MVM</sub>.</li>
+        <li>Use FINMA-prescribed risk-free discount rates consistent with BEL valuation.</li>
+      </ul>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="module-3.html" class="nav-btn prev">&larr; Module 3: Cost of Capital</a>
+      <a href="module-5.html" class="nav-btn next">Module 5: MVM in Practice &rarr;</a>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

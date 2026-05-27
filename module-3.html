@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 3 – Cost of Capital Approach | MVM Course</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topnav">
+  <a href="index.html" class="topnav-brand">
+    <div class="topnav-flag">+</div>
+    MVM &amp; SST Course
+    <span class="topnav-subtitle">Swiss Solvency Test</span>
+  </a>
+</header>
+
+<div class="layout">
+
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Course</div>
+      <a href="index.html">Overview</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Modules</div>
+      <a href="module-1.html">1. The Swiss Solvency Test</a>
+      <a href="module-2.html">2. MVM: Concept &amp; Rationale</a>
+      <a href="module-3.html" class="active">3. Cost of Capital Approach</a>
+      <a href="module-4.html">4. MVM Calculation</a>
+      <a href="module-5.html">5. MVM in Practice</a>
+      <a href="module-6.html">6. Advanced Topics</a>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <div class="module-label">Module 3</div>
+    <h1>The Cost of Capital Approach</h1>
+    <p class="page-subtitle">
+      The MVM is calculated using the cost-of-capital method. This module covers
+      the 6% CoC rate, why market risk is excluded, how future capital requirements
+      are projected, and how they are discounted to a present value.
+    </p>
+
+    <h2>What Is the Cost of Capital?</h2>
+    <p>
+      Investors who provide capital to an insurer (e.g., by holding equity) expect
+      a return commensurate with the risk they take. The <strong>cost of capital (CoC)</strong>
+      is the minimum rate of return that equity investors require to invest in a given firm.
+    </p>
+    <p>
+      For the MVM calculation, the CoC rate represents the <em>excess</em> return above
+      the risk-free rate that the reference undertaking's shareholders require. In other
+      words, if the risk-free rate is <em>r</em>, the reference undertaking needs to earn
+      <em>r + CoC</em> on its regulatory capital.
+    </p>
+    <p>
+      Since the reference undertaking invests only in risk-free assets (earning exactly
+      <em>r</em>), it earns nothing beyond the risk-free return from its investment
+      portfolio. The <strong>MVM must cover the CoC shortfall</strong>.
+    </p>
+
+    <div class="concept-box">
+      <div class="cbox-title">Economic Intuition</div>
+      <p>
+        Suppose the reference undertaking holds CHF 100 of regulatory capital at time <em>t</em>.
+        It earns the risk-free rate <em>r</em> on that capital. Its shareholders require
+        <em>r + 6%</em>. The 6% gap &mdash; CHF 6 per year on each CHF 100 of capital &mdash;
+        must be recovered from the MVM. The MVM is simply the present value of all
+        these annual CHF 6 charges over the entire run-off horizon.
+      </p>
+    </div>
+
+    <h2>The 6% CoC Rate</h2>
+    <p>
+      Under the SST, the cost-of-capital rate is set at <strong>6% per annum</strong>.
+      This is the same rate used under Solvency II (EU) for the analogous Risk Margin calculation.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Aspect</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Value</strong></td><td>6% per annum</td></tr>
+          <tr><td><strong>Basis</strong></td><td>Excess return on equity capital above risk-free rate</td></tr>
+          <tr><td><strong>Prescribed by</strong></td><td>FINMA (regulatory constant, not firm-specific)</td></tr>
+          <tr><td><strong>Same under Solvency II?</strong></td><td>Yes &mdash; Solvency II also uses 6% for the Risk Margin</td></tr>
+          <tr><td><strong>Sensitivity</strong></td><td>High: a 1% change in CoC shifts MVM roughly proportionally</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warning-box">
+      <strong>Debate:</strong> The 6% rate has been criticised for being calibrated in
+      an era of higher interest rates. In a low-rate environment, 6% can overstate the
+      true economic cost of capital, leading to inflated MVM values.
+    </div>
+
+    <h2>Which Capital Requirement? The SCR<sub>MVM</sub></h2>
+    <p>
+      To compute the MVM, we need the capital requirement for non-hedgeable risks
+      at each future point in time. We call this the <strong>SCR<sub>MVM</sub></strong>.
+    </p>
+    <ul>
+      <li><strong>Include:</strong> life underwriting risk, non-life underwriting risk, health underwriting risk, credit risk on reinsurance.</li>
+      <li><strong>Exclude:</strong> market risk, operational risk, business risk.</li>
+    </ul>
+
+    <div class="info-box">
+      <strong>Why exclude market risk?</strong> The reference undertaking perfectly
+      matches its assets to risk-free instruments &mdash; no asset&ndash;liability
+      mismatch and no exposure to interest rate, equity, or credit spread movements.
+    </div>
+
+    <h2>Projecting Future Capital Requirements</h2>
+    <p>
+      For each future year, the capital requirement must be projected as the portfolio runs off.
+      Key drivers:
+    </p>
+    <ul>
+      <li><strong>Policy count reduction:</strong> portfolio shrinks as policyholders exit.</li>
+      <li><strong>Duration:</strong> long-tail lines decay slowly; short-tail lines fall quickly.</li>
+      <li><strong>Claim settlement:</strong> as claims are paid, reserve risk decreases.</li>
+      <li><strong>No new business:</strong> the reference undertaking runs off existing liabilities only.</li>
+    </ul>
+
+    <div class="example-box">
+      <div class="ex-title">Run-off Profile: Conceptual Example</div>
+      <p>A non-life reserve risk portfolio with CHF 500m of outstanding claims:</p>
+      <ul>
+        <li><strong>Year 0:</strong> SCR<sub>MVM</sub> = CHF 80m</li>
+        <li><strong>Year 1:</strong> SCR<sub>MVM</sub> = CHF 62m</li>
+        <li><strong>Year 3:</strong> SCR<sub>MVM</sub> = CHF 35m</li>
+        <li><strong>Year 7:</strong> SCR<sub>MVM</sub> = CHF 9m</li>
+        <li><strong>Year 10+:</strong> SCR<sub>MVM</sub> &asymp; 0</li>
+      </ul>
+    </div>
+
+    <h2>Discounting</h2>
+    <p>
+      Annual capital charges must be discounted to present value using the risk-free term structure.
+    </p>
+
+    <div class="formula-box">
+      <div class="box-label">Discounting the Capital Charge at Year t</div>
+      <div class="f-main">PV of charge = CoC &times; SCR<sub>MVM</sub>(t) / (1 + r<sub>t+1</sub>)<sup>t+1</sup></div>
+      <div class="f-note">
+        r<sub>t+1</sub> = risk-free spot rate for maturity (t+1) years from valuation date
+      </div>
+    </div>
+
+    <div class="formula-box">
+      <div class="box-label">MVM — Full Formula</div>
+      <div class="f-main">MVM = CoC &times; &Sigma;<sub>t=0</sub><sup>T&minus;1</sup> SCR<sub>MVM</sub>(t) / (1 + r<sub>t+1</sub>)<sup>t+1</sup></div>
+      <div class="f-note">
+        CoC = 6% p.a. &nbsp;|&nbsp; T = run-off horizon &nbsp;|&nbsp; r<sub>t+1</sub> = risk-free spot rate
+      </div>
+    </div>
+
+    <h2>Sensitivity of MVM to Key Drivers</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Driver</th><th>Effect on MVM</th><th>Intuition</th></tr></thead>
+        <tbody>
+          <tr><td>Higher CoC rate</td><td>MVM increases proportionally</td><td>More expensive capital &rarr; larger compensation needed</td></tr>
+          <tr><td>Longer liability duration</td><td>MVM increases</td><td>More years of capital to be held</td></tr>
+          <tr><td>Higher SCR<sub>MVM</sub></td><td>MVM increases proportionally</td><td>More capital at each time step</td></tr>
+          <tr><td>Higher risk-free rates</td><td>MVM decreases</td><td>Future charges discounted more heavily</td></tr>
+          <tr><td>Faster run-off</td><td>MVM decreases</td><td>Fewer years of capital holding</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="takeaways">
+      <div class="t-title">Key Takeaways &mdash; Module 3</div>
+      <ul>
+        <li>The CoC rate of 6% p.a. is the excess return above risk-free that reference undertaking shareholders require.</li>
+        <li>6% is a regulatory constant prescribed by FINMA &mdash; it does not vary by firm or market conditions.</li>
+        <li>SCR<sub>MVM</sub> includes underwriting risk and reinsurance credit risk, but excludes market risk and operational risk.</li>
+        <li>Market risk is excluded because the reference undertaking holds risk-free assets.</li>
+        <li>Future SCR<sub>MVM</sub> values must be projected and discounted to present value using the risk-free term structure.</li>
+        <li>MVM is increasing in CoC rate, liability duration, and SCR<sub>MVM</sub>; decreasing in risk-free rates.</li>
+      </ul>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="module-2.html" class="nav-btn prev">&larr; Module 2: MVM Concept</a>
+      <a href="module-4.html" class="nav-btn next">Module 4: MVM Calculation &rarr;</a>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

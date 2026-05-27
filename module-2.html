@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 2 – MVM: Concept &amp; Rationale | MVM Course</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topnav">
+  <a href="index.html" class="topnav-brand">
+    <div class="topnav-flag">+</div>
+    MVM &amp; SST Course
+    <span class="topnav-subtitle">Swiss Solvency Test</span>
+  </a>
+</header>
+
+<div class="layout">
+
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Course</div>
+      <a href="index.html">Overview</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Modules</div>
+      <a href="module-1.html">1. The Swiss Solvency Test</a>
+      <a href="module-2.html" class="active">2. MVM: Concept &amp; Rationale</a>
+      <a href="module-3.html">3. Cost of Capital Approach</a>
+      <a href="module-4.html">4. MVM Calculation</a>
+      <a href="module-5.html">5. MVM in Practice</a>
+      <a href="module-6.html">6. Advanced Topics</a>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <div class="module-label">Module 2</div>
+    <h1>MVM: Concept &amp; Rationale</h1>
+    <p class="page-subtitle">
+      Why is the best estimate of liabilities not enough? This module explains the
+      transfer-value concept, the role of non-hedgeable risks, and why a rational
+      third party demands more than the BEL to assume insurance liabilities.
+    </p>
+
+    <h2>The Limits of the Best Estimate</h2>
+    <p>
+      The <strong>Best Estimate of Liabilities (BEL)</strong> is the probability-weighted
+      present value of all future insurance cash flows (claims, expenses, premiums)
+      discounted at the risk-free interest rate. It is the actuarial "expected value" of
+      the liability portfolio.
+    </p>
+    <p>
+      While the BEL is theoretically correct in an expected-value sense, it has a
+      fundamental limitation: insurance liabilities are <strong>not tradeable</strong> on
+      a deep liquid market. There is no exchange where you can buy or sell a portfolio
+      of life insurance policies at the press of a button.
+    </p>
+
+    <div class="concept-box">
+      <div class="cbox-title">The Illiquidity Problem</div>
+      <p>
+        For a traded security (e.g., a bond), the market price already incorporates all
+        information about risk &mdash; including the compensation investors demand for
+        bearing that risk. The BEL, by contrast, only captures the expected cash flows.
+        It ignores the fact that <em>actually managing</em> those liabilities requires
+        capital, which has a cost.
+      </p>
+    </div>
+
+    <h2>The Transfer Value Concept</h2>
+    <p>
+      The SST &mdash; like Solvency II &mdash; defines the market-consistent value of
+      liabilities as the amount for which they could be <strong>transferred</strong> to a
+      knowledgeable, willing third party in an arm's-length transaction. This is the
+      <em>transfer value</em>.
+    </p>
+    <p>
+      Imagine that an insurer becomes financially distressed. FINMA would need to find
+      another insurer (the "reference undertaking") willing to take over all the
+      policyholders and continue honoring their contracts. The key question is:
+    </p>
+
+    <div class="info-box">
+      <strong>Central Question:</strong> What is the minimum amount the reference
+      undertaking would require &mdash; on top of the best estimate &mdash; to agree
+      to assume the liability portfolio?
+    </div>
+
+    <p>
+      That additional amount is the <strong>Market Value Margin (MVM)</strong>. It
+      compensates the reference undertaking for the cost of holding regulatory capital
+      against the <em>non-hedgeable</em> risks embedded in the liability portfolio
+      throughout its entire run-off period.
+    </p>
+
+    <div class="formula-box">
+      <div class="box-label">Transfer Value Identity</div>
+      <div class="f-main">Transfer Value = BEL + MVM</div>
+      <div class="f-note">
+        This is the minimum amount a rational, well-capitalised insurer would accept
+        to assume the liability portfolio at arm's length.
+      </div>
+    </div>
+
+    <h2>Hedgeable vs Non-Hedgeable Risks</h2>
+    <p>
+      A critical distinction in the MVM framework is between risks that can be
+      <strong>hedged</strong> in capital markets and risks that cannot.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Risk type</th>
+            <th>Examples</th>
+            <th>Hedgeable?</th>
+            <th>In MVM?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Market risk</strong></td>
+            <td>Interest rate risk, equity risk, FX risk</td>
+            <td><span class="badge badge-green">Yes</span></td>
+            <td><span class="badge badge-red">No</span></td>
+          </tr>
+          <tr>
+            <td><strong>Life underwriting</strong></td>
+            <td>Mortality, longevity, lapse, disability, expenses</td>
+            <td><span class="badge badge-red">No</span></td>
+            <td><span class="badge badge-green">Yes</span></td>
+          </tr>
+          <tr>
+            <td><strong>Non-life underwriting</strong></td>
+            <td>Premium risk, reserve risk, catastrophe risk</td>
+            <td><span class="badge badge-red">No</span></td>
+            <td><span class="badge badge-green">Yes</span></td>
+          </tr>
+          <tr>
+            <td><strong>Health underwriting</strong></td>
+            <td>Morbidity risk, medical cost inflation</td>
+            <td><span class="badge badge-red">No</span></td>
+            <td><span class="badge badge-green">Yes</span></td>
+          </tr>
+          <tr>
+            <td><strong>Counterparty credit</strong></td>
+            <td>Reinsurance counterparty default</td>
+            <td><span class="badge badge-red">No (partially)</span></td>
+            <td><span class="badge badge-green">Yes</span></td>
+          </tr>
+          <tr>
+            <td><strong>Operational risk</strong></td>
+            <td>Systems failures, legal risk, fraud</td>
+            <td><span class="badge badge-red">No</span></td>
+            <td><span class="badge badge-red">No (excluded)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      The reference undertaking is assumed to <strong>hold only risk-free assets</strong>
+      to back the liability portfolio. Because it has perfectly matched the asset-side
+      risk with risk-free instruments, market risk is fully hedged and does not require
+      additional capital. Only the <em>non-hedgeable</em> underwriting and credit risks
+      remain, and it is for these that the MVM compensates.
+    </p>
+
+    <h2>The Reference Undertaking</h2>
+    <p>
+      The <strong>reference undertaking</strong> is a hypothetical insurer with the
+      following characteristics:
+    </p>
+    <ul>
+      <li>It takes over exactly the same liability portfolio (same policies, same cash flows).</li>
+      <li>It holds only <strong>risk-free assets</strong> to back the liabilities (no market risk).</li>
+      <li>It is subject to the <strong>same regulatory capital requirements</strong> (SST rules apply to it too).</li>
+      <li>It is <strong>well-capitalised</strong> &mdash; it can actually meet the capital requirements.</li>
+      <li>It operates at the <strong>minimum required capital</strong> level at each point in time.</li>
+    </ul>
+
+    <div class="warning-box">
+      <strong>Simplifying assumption:</strong> The reference undertaking operates with
+      no operational risk, no market risk, and no diversification benefits from other
+      business lines. This means the MVM is computed on a "stand-alone" basis for
+      the liability portfolio.
+    </div>
+
+    <h2>From Capital Requirement to MVM</h2>
+    <p>
+      Since the reference undertaking is subject to SST rules, it must hold regulatory
+      capital against the non-hedgeable risks at every point during the run-off. Holding
+      this capital has a cost &mdash; the capital could otherwise be returned to
+      shareholders or invested elsewhere.
+    </p>
+    <p>
+      The MVM compensates the reference undertaking for this opportunity cost. It equals
+      the present value of all future capital charges:
+    </p>
+
+    <div class="formula-box">
+      <div class="box-label">MVM — Conceptual Formula</div>
+      <div class="f-main">
+        MVM = PV of (CoC rate &times; Capital requirement at each future date)
+      </div>
+      <div class="f-note">
+        CoC rate = Cost of Capital rate (6% p.a. in SST)<br>
+        Capital requirement at each future date = SST capital for non-hedgeable risks if the
+        portfolio were re-valued at that point in time.
+      </div>
+    </div>
+
+    <h2>A Simple Illustration</h2>
+
+    <div class="example-box">
+      <div class="ex-title">Illustration: Life Insurance Run-off</div>
+      <p>
+        Consider a life insurer with a 20-year annuity portfolio. At valuation date:
+      </p>
+      <ul>
+        <li>BEL = CHF 1,000 million (present value of expected annuity payments)</li>
+        <li>The capital required for longevity risk (a non-hedgeable risk) is CHF 50m today.</li>
+        <li>Over 20 years, as the portfolio runs off, this capital requirement shrinks.</li>
+        <li>At 6% CoC, the cost of holding capital each year totals, say, CHF 18 million in present value.</li>
+        <li>Therefore MVM &asymp; CHF 18 million, and MCVL = CHF 1,018 million.</li>
+      </ul>
+      <p>
+        The MVM of CHF 18m is the minimum extra amount a reference undertaking would demand
+        to take over this annuity book. Without it, they would be bearing capital costs
+        out of their own pocket.
+      </p>
+    </div>
+
+    <h2>What the MVM Is Not</h2>
+    <ul>
+      <li><strong>MVM is not a risk premium</strong> on the probability of exceeding the best estimate.</li>
+      <li><strong>MVM is not a safety margin</strong> added to be prudent.</li>
+      <li><strong>MVM is not a profit margin</strong>. The reference undertaking earns exactly its cost of capital.</li>
+    </ul>
+
+    <div class="takeaways">
+      <div class="t-title">Key Takeaways &mdash; Module 2</div>
+      <ul>
+        <li>Insurance liabilities are not traded on liquid markets, so the BEL alone understates the true transfer value.</li>
+        <li>The MVM = the present value of the cost of holding regulatory capital for non-hedgeable risks during the run-off.</li>
+        <li>The reference undertaking holds only risk-free assets and is subject to SST capital requirements.</li>
+        <li>Only non-hedgeable risks enter the MVM: life, non-life, and health underwriting risk, and reinsurance credit risk.</li>
+        <li>Market risk is excluded because the reference undertaking can hedge it by holding risk-free assets.</li>
+        <li>MVM is an economic concept, not an arbitrary safety margin or risk premium.</li>
+      </ul>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="module-1.html" class="nav-btn prev">&larr; Module 1: The SST</a>
+      <a href="module-3.html" class="nav-btn next">Module 3: Cost of Capital &rarr;</a>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
